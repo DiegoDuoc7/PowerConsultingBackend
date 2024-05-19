@@ -30,3 +30,32 @@ Content-Type: application/json
 
 ### Eliminar un empleado por ID
 DELETE http://localhost:4000/employees/664967739585f3d5cfbe8985
+
+### Crear un nuevo proyecto
+POST http://localhost:4000/projects
+Content-Type: application/json
+
+{
+  "nombre": "Proyecto A",
+  "descripcion": "Descripción del Proyecto A",
+  "empleado": "664a570a9585f3d5cfbe89c2"
+}
+
+### Actualizar el porcentaje de avance de un proyecto y agregar una nota
+PUT http://localhost:4000/projects/664a6590dbd26cecc880f87c/progress
+Content-Type: application/json
+
+{
+  "porcentajeAvance": 50,
+  "nota": "Avance del 50% completado"
+}
+
+### Obtener todos los proyectos
+GET http://localhost:4000/projects
+
+### Obtener un proyecto por ID
+GET http://localhost:4000/projects/ID_DEL_PROYECTO
+
+### Eliminar un proyecto por ID
+DELETE http://localhost:4000/projects/ID_DEL_PROYECTO
+

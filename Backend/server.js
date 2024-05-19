@@ -2,10 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const morgan = require('morgan');
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+app.use(morgan('dev'));
 
 // Conexión a MongoDB
 const dbURI = 'mongodb+srv://diegod7:wnRKITEJ08jwU7UJ@powerconsulting.zva8cz7.mongodb.net/';
@@ -15,10 +17,15 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // Modelos
 require('./src/models/Employee');
+require('./src/models/Project');
+
 // Rutas
-app.use(require('./src/routes/employees.routes'));
+const employeeRoutes = require('./src/routes/employees.routes');
+const projectRoutes = require('./src/routes/projects.routes');
+
+app.use('/', employeeRoutes);
+app.use('/', projectRoutes);
 
 app.listen(4000, () => {
     console.log('Servidor corriendo en http://localhost:4000');
 });
-
