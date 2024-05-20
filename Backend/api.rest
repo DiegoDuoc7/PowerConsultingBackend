@@ -36,18 +36,18 @@ POST http://localhost:4000/projects
 Content-Type: application/json
 
 {
-  "nombre": "Proyecto A",
-  "descripcion": "Descripción del Proyecto A",
+  "nombre": "Primer  Proyecto HTML",
+  "descripcion": "HTML",
   "empleado": "664a570a9585f3d5cfbe89c2"
 }
 
 ### Actualizar el porcentaje de avance de un proyecto y agregar una nota
-PUT http://localhost:4000/projects/664a6590dbd26cecc880f87c/progress
+PUT http://localhost:4000/projects/664a6c1a6d0badab5269a9c0/progress
 Content-Type: application/json
 
 {
-  "porcentajeAvance": 50,
-  "nota": "Avance del 50% completado"
+  "porcentajeAvance": 80,
+  "nota": "Avance del 80% completado"
 }
 
 ### Obtener todos los proyectos
