@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### Obtener todos los empleados
-GET http://localhost:4000/employees
+GET https://power-consulting-backend-pdwzcxe0w-diegoduoc7s-projects.vercel.app/employees
 
 ### Obtener un empleado por ID
 GET http://localhost:4000/employees/664967739585f3d5cfbe8985
