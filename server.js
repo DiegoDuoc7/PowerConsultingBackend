@@ -9,6 +9,8 @@ const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
 const app = express();
+const port = process.env.PORT || 4000;
+
 app.use(cors({
     origin: '*', // Aquí puedes especificar dominios específicos en lugar de '*' para mayor seguridad
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -67,6 +69,6 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-app.listen(4000, () => {
-    console.log('Servidor corriendo en http://localhost:4000');
+app.listen(port, () => {
+    console.log(`Servidor corriendo en http://localhost:${port}`);
 });
