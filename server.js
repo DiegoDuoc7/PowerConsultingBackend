@@ -24,16 +24,25 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 // Modelos
 require('./src/models/Employee');
 require('./src/models/Project');
-require('./src/models/User');
+require('./src/models/Aportador');
+require('./src/models/Residente');
+require('./src/models/Aporte'); // Añadido el modelo de Aporte
+//require('./src/models/User');
 
 // Rutas
 const employeeRoutes = require('./src/routes/employees.routes');
 const projectRoutes = require('./src/routes/projects.routes');
-const userRoutes = require('./src/routes/user.routes');
+const aportadorRoutes = require('./src/routes/aportadores.routes');
+const residenteRoutes = require('./src/routes/residentes.routes');
+const aporteRoutes = require('./src/routes/aporte.routes'); // Añadida la ruta de Aporte
+//const userRoutes = require('./src/routes/user.routes');
 
-app.use('/', employeeRoutes);
-app.use('/', projectRoutes);
-app.use('/', userRoutes);
+app.use('/employees', employeeRoutes);
+app.use('/projects', projectRoutes);
+app.use('/aportadores', aportadorRoutes);
+app.use('/residentes', residenteRoutes);
+app.use('/aportes', aporteRoutes); // Añadida la ruta de Aporte
+//app.use('/', userRoutes);
 
 app.listen(4000, () => {
     console.log('Servidor corriendo en http://localhost:4000');

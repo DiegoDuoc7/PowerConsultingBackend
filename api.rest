@@ -1,0 +1,172 @@
+### Probar la creación de un nuevo empleado
+POST http://localhost:4000/employees
+Content-Type: application/json
+
+{
+  "nombre": "Carlos",
+  "apellido": "Ramírez",
+  "email": "carlos.ramirez@example.com",
+  "puesto": "Ingeniero de Software",
+  "salario": 70000
+}
+
+### Obtener todos los empleados
+GET http://localhost:4000/employees
+
+### Obtener un empleado por ID
+GET http://localhost:4000/employees/664967739585f3d5cfbe8985
+
+### Actualizar un empleado por ID
+PUT http://localhost:4000/employees/664967739585f3d5cfbe8985
+Content-Type: application/json
+
+{
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "email": "juan.perez@example.com",
+  "puesto": "Desarrollador Senior",
+  "salario": 60000
+}
+
+### Eliminar un empleado por ID
+DELETE http://localhost:4000/employees/664967739585f3d5cfbe8985
+
+### Crear un nuevo proyecto
+POST http://localhost:4000/projects
+Content-Type: application/json
+
+{
+  "nombre": "Primer  Proyecto HTML",
+  "descripcion": "HTML",
+  "empleado": "664a570a9585f3d5cfbe89c2"
+}
+
+### Actualizar el porcentaje de avance de un proyecto y agregar una nota
+PUT http://localhost:4000/projects/664a6c1a6d0badab5269a9c0/progress
+Content-Type: application/json
+
+{
+  "porcentajeAvance": 80,
+  "nota": "Avance del 80% completado"
+}
+
+### Obtener todos los proyectos
+GET http://localhost:4000/projects
+
+### Obtener un proyecto por ID
+GET http://localhost:4000/projects/ID_DEL_PROYECTO
+
+### Eliminar un proyecto por ID
+DELETE http://localhost:4000/projects/ID_DEL_PROYECTO
+
+
+
+
+
+### Crear un nuevo residente
+POST http://localhost:4000/residentes
+Content-Type: application/json
+
+{
+  "nombre": "Carlos",
+  "apellido": "Gómez",
+  "email": "carlos.gomez@example.com",
+  "telefono": "123456789",
+  "direccion": "Calle Falsa 123"
+}
+
+### Obtener todos los residentes
+GET http://localhost:4000/residentes
+
+### Obtener un residente por ID
+GET http://localhost:4000/residentes/ID_DEL_RESIDENTE
+
+### Actualizar un residente por ID
+PUT http://localhost:4000/residentes/ID_DEL_RESIDENTE
+Content-Type: application/json
+
+{
+  "nombre": "Carlos",
+  "apellido": "Gómez",
+  "email": "carlos.gomez@example.com",
+  "telefono": "987654321",
+  "direccion": "Avenida Siempre Viva 742"
+}
+
+### Eliminar un residente por ID
+DELETE http://localhost:4000/residentes/ID_DEL_RESIDENTE
+
+
+
+
+
+### Crear un nuevo aportador
+POST http://localhost:4000/aportadores
+Content-Type: application/json
+
+{
+  "nombre": "Diego",
+  "rut": "27234961-4",
+  "email": "diego@example.com",
+  "monto": 1000,
+  "tarjeta": "1234-5678-9012-3456",
+  "fechaInicio": "2023-10-01"
+}
+
+### Obtener todos los aportadores
+GET http://localhost:4000/aportadores
+
+### Obtener un aportador por ID
+GET http://localhost:4000/aportadores/66500b03c403b768c40e5bb2
+
+### Actualizar un aportador por ID
+PUT http://localhost:4000/aportadores/66500b03c403b768c40e5bb2
+Content-Type: application/json
+
+{
+  "nombre": "Diego",
+  "rut": "27234961-4",
+  "email": "diego@example.com",
+  "monto": 2000,
+  "tarjeta": "1234-5678-9012-3456",
+  "fechaInicio": "2023-10-01"
+}
+
+### Eliminar un aportador por ID
+DELETE http://localhost:4000/aportadores/66500b03c403b768c40e5bb2
+
+
+
+
+
+
+### Crear un nuevo aporte
+POST http://localhost:4000/aportes
+Content-Type: application/json
+
+{
+  "aportadorId": "66500b60c403b768c40e5bba",
+  "monto": 5000,
+  "fecha": "2023-10-01"
+}
+
+### Obtener todos los aportes
+GET http://localhost:4000/aportes
+
+### Obtener un aporte por ID
+GET http://localhost:4000/aportes/66500b03c403b768c40e5bb2
+
+### Actualizar un aporte por ID
+PUT http://localhost:4000/aportes/66500b03c403b768c40e5bb2
+Content-Type: application/json
+
+{
+  "monto": 6000,
+  "fecha": "2023-10-02"
+}
+
+### Eliminar un aporte por ID
+DELETE http://localhost:4000/aportes/66500b03c403b768c40e5bb2
+
+
+
