@@ -5,6 +5,8 @@ const cors = require('cors');
 const morgan = require('morgan');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
 
 const app = express();
 app.use(cors({
@@ -43,6 +45,27 @@ app.use('/aportadores', aportadorRoutes);
 app.use('/residentes', residenteRoutes);
 app.use('/aportes', aporteRoutes); // Añadida la ruta de Aporte
 //app.use('/', userRoutes);
+
+// Configuración de Swagger
+const swaggerOptions = {
+  swaggerDefinition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'API Documentation',
+      version: '1.0.0',
+      description: 'Documentación de la API',
+    },
+    servers: [
+      {
+        url: 'http://localhost:4000',
+      },
+    ],
+  },
+  apis: ['./routes/*.js'], // Ruta a tus archivos de rutas
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.listen(4000, () => {
     console.log('Servidor corriendo en http://localhost:4000');
